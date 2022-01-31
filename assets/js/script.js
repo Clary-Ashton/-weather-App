@@ -85,6 +85,13 @@ var displayWeather = function(weather, searchCity){
     windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
     windSpeedEl.classList = "list-group-item"
 
+     //appending all children to container
+   weatherContainerEl.appendChild(temperatureEl);
+   weatherContainerEl.appendChild(humidityEl);
+   weatherContainerEl.appendChild(windSpeedEl);
+
+   
+
 
 
 
