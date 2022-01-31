@@ -12,19 +12,35 @@
 <body>
     <header class="bg-primary text-white text-center p-2">
         <h1>Weather App</h1>
-    </header>    
+    </header>  
+    <main class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-md-3 p-2 search-column">
+                <form class="border p-2" id="city-search-form">
+                    <h2>Search for a City</h2>
+                    <input type="text" class="form-input" id="city"/>
+                    <button class="btn btn-primary" type="submit">Search</button>
+
+                </form>
+                <div class="past-search border" id="past-search-buttons"></div>
+
+            </div>
+            <div class="col-12 col-md-9">
+                <div class="row border selected-city" id="current-forecast">
+                    <div class="col-12">
+                        <h2 id="search-city"></h2>
+                        <div class="list-group" id="current-weather-container"></div>
+                    </div>
+                </div>
+
+                <div class="row border" id="five-day-forecast">
+                    <h2 class="col-12" id="forecast"></h2>
+                    <div class="d-flex" id="fiveday-container"></div>
+                </div>
+            </div>
+        </div>
     
-
-
-
-
-
-
-
-
-
-
-
+</main>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script
 <script src="./assets/js/script.js">
 </body>
