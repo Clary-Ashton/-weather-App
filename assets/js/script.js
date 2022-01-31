@@ -48,7 +48,42 @@ fetch(apiUrl)
     });
 };
 
+var displayWeather = function(weather, searchCity){
+    //clear content
+    weatherContainerEl.textContent = "";
+    citySearchInputEl.textContent = searchCity;
 
+    //console.log(weather)
+
+    // creating the date element
+    var currentDate = document.createElement("span")
+    currentDate.textContent = " (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
+    citySearchInputEl.appendChild(currentDate);
+
+    //Creating an image Element
+    var weatherIcon = document.createElement("img")
+    weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
+    citySearchInputEl.appendChild(weatherIcon);
+
+    //creating a span element to hold temperature data
+    var temperatureEl = document.createElement("span");
+    temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F";
+    temperatureEl.classList = "list-group-item"
+
+    //Creating a span element to hold Humidity data
+    var humidityEl = document.createElement("span");
+    humidityEl.textContent= "Humidity: " + weather.main.humidity + " %";
+    humidityEl.classList = "list-group-item"
+
+     //creating a span element to hold Wind data
+   var windSpeedEl = document.createElement("span");
+   windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
+   windSpeedEl.classList = "list-group-item"
+
+
+
+
+}
 
 
 
