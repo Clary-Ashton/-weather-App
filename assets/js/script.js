@@ -80,6 +80,11 @@ var displayWeather = function(weather, searchCity){
    windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
    windSpeedEl.classList = "list-group-item"
 
+    //creating a span element to hold Wind data
+    var windSpeedEl = document.createElement("span");
+    windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
+    windSpeedEl.classList = "list-group-item"
+
 
 
 
