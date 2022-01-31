@@ -90,11 +90,24 @@ var displayWeather = function(weather, searchCity){
    weatherContainerEl.appendChild(humidityEl);
    weatherContainerEl.appendChild(windSpeedEl);
 
-   
+   //Getting City coordinates latitude and longitude
+   var lat = weather.coord.lat;
+   var lon = weather.coord.lon;
+   getUvIndex(lat,lon)
+}
 
-
-
-
+var getUvIndex = function(lat,lon){
+    var weatherKey = "bba984a84c023f7dd8d62dc48cd89120"   
+    var apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`
+    fetch(apiURL)
+    .then(function(response){
+        response.json().then(function(data){
+            displayUvIndex(data)
+           // console.log(data)
+        });
+    });
+    //console.log(lat);
+    //console.log(lon);
 }
 
 
