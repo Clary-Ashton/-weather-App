@@ -152,6 +152,15 @@ var get5Day = function(city){
 
 };
 
+var display5Day = function(weather){
+    forecastContainerEl.textContent=""
+    forecastTitle.textContent = "5-Day Forecast:";
+
+    var forecast = weather.list;
+    for(var i=5; i<forecast.length; i=i+8);
+    var dailyForecast = forecast[i];
+}
+
 
 
 
