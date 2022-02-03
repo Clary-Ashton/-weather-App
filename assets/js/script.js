@@ -43,7 +43,7 @@ fetch(apiUrl)
     .then(function(response) {
         return response.json()
         .then(function(data) {
-            console.log(data)
+            //console.log(data)
             displayWeather(data,city);
         });
     });
@@ -144,7 +144,7 @@ var get5Day = function(city){
     .then (function(response){
         return response.json()
         .then (function(data){
-            console.log(data)
+            //console.log(data)
             display5Day(data);
 
         });
@@ -159,7 +159,19 @@ var display5Day = function(weather){
     var forecast = weather.list;
     for(var i=5; i<forecast.length; i=i+8);
     var dailyForecast = forecast[i];
+
+    var forecastEl = document.createElement("div");
+    forecastEl.classList = "card bg-primary text-light m-2";
+
+    //console.log(dailyForecast)
 }
+
+// Creating the date element
+var forecastDate = document.createElement("h5");
+forecastDate.textContent = moment.unix(dailyForecast.dt).format("MMM D, YYYY");
+forecastDate.classList = "card-header text-center";
+forestEl.appendChild(forecastDate);
+
 
 
 
