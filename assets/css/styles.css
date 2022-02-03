@@ -14,3 +14,8 @@ h1 {
 .search-column {
     background-color: #d3d3d3;
 }
+
+.list-group {
+    line-height: 0.5;
+    border: none;
+}
