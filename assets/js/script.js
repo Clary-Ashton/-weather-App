@@ -178,11 +178,17 @@ weatherIcon.classList = "card-body text-center";
 weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}@2x.png`);  
 forecastEl.appendChild(weatherIcon);
 
-//Creating the Temperature span
+//Creating the Temperature span element
 var forecastTempEl = document.createElement("span");
 forecastTempEl.classList = "card-body text-center";
-forecastTempEl.textContent = dailyForecast.main.temp + "°F";
+forecastTempEl.textContent = dailyForecast.main.temp + " °F";
 forecastEl.appendChild(forecastTempEl);
+
+//creating the Humidity span element
+var forecastHumEl = document.createElement("span");
+forecastHumEl.classList = "card-body text-center";
+forecastHumEl.textContent = dailyForecast.main.humidity + " %";
+forecastEl.appendChild(forecastHumEl);
 
 
 
