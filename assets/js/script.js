@@ -219,30 +219,8 @@ var pastSearchHandler = function(event){
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-buttonEl.addEventListener("submit", formSubmitHandler);
+//Calling formSubmitHandler() and pastSearchSubmitHandler()
+cityFormEl.addEventListener("submit", formSubmitHandler);
+pastSearchButtonEl.addEventListener("click", pastSearchHandler);
 
 
