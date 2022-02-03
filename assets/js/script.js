@@ -163,8 +163,8 @@ var display5Day = function(weather){
     var forecastEl = document.createElement("div");
     forecastEl.classList = "card bg-primary text-light m-2";
 
-    //console.log(dailyForecast)
-}
+    console.log(dailyForecast)
+
 
 // Creating the date element
 var forecastDate = document.createElement("h5");
@@ -189,6 +189,14 @@ var forecastHumEl = document.createElement("span");
 forecastHumEl.classList = "card-body text-center";
 forecastHumEl.textContent = dailyForecast.main.humidity + " %";
 forecastEl.appendChild(forecastHumEl);
+
+//console.log(forecastEl);
+
+}
+
+
+
+
 
 
 
