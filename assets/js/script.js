@@ -9,8 +9,8 @@ var forecastTitle = document.querySelector("#forecast");
 var forecastContainerEl = document.querySelector("#fiveday-container");
 var pastSearchButtonEl = document.querySelector("#past-search-buttons");
 var buttonEl = document.querySelector("#searchBtn");
-//Get a city weather value when entering a city name on the search form.
 
+//Get a city weather value when entering a city name on the search form.
 var formSubmitHandler = function(event){
     event.preventDefault();
 
@@ -170,7 +170,17 @@ var display5Day = function(weather){
 var forecastDate = document.createElement("h5");
 forecastDate.textContent = moment.unix(dailyForecast.dt).format("MMM D, YYYY");
 forecastDate.classList = "card-header text-center";
-forestEl.appendChild(forecastDate);
+forecastEl.appendChild(forecastDate);
+
+//Creatng the image element
+var weatherIcon = document.createElement("img");
+weatherIcon.classList = "card-body text-center";
+weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}@2x.png`);  
+forecastEl.appendChild(weatherIcon);
+
+
+
+
 
 
 
