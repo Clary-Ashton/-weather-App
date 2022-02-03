@@ -178,6 +178,14 @@ weatherIcon.classList = "card-body text-center";
 weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${dailyForecast.weather[0].icon}@2x.png`);  
 forecastEl.appendChild(weatherIcon);
 
+//Creating the Temperature span
+var forecastTempEl = document.createElement("span");
+forecastTempEl.classList = "card-body text-center";
+forecastTempEl.textContent = dailyForecast.main.temp + "°F";
+forecastEl.appendChild(forecastTempEl);
+
+
+
 
 
 
