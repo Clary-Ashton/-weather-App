@@ -196,7 +196,7 @@ console.log(forecastEl);
 
 
 
-
+//getting pastSearch to populate weather for that city when clicked.
 var pastSearch = function(pastSearch){
     //console.log(pastSearch)
     pastSearchEl = document.createElement("button");
@@ -205,9 +205,15 @@ var pastSearch = function(pastSearch){
     pastSearch.setAttribute("data-city", pastSearch)
     pastSearch.setAttribute("type", "submit");
 
-    pastSearchButtonEl.prepend(pastSearchEl);
+    
 
 }
+
+
+
+
+
+
 
 
 
