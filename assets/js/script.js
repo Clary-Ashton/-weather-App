@@ -205,8 +205,8 @@ var pastSearch = function(pastSearch){
     pastSearch.setAttribute("data-city", pastSearch)
     pastSearch.setAttribute("type", "submit");
 
-    
-
+    //prepending pastSearch to Dom
+    pastSearchButtonEl.prepend(pastSearchEl);
 }
 
 
