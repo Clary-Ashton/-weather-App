@@ -195,8 +195,16 @@ forecastEl.appendChild(forecastHumEl);
 }
 
 
+var pastSearch = function(pastSearch){
+    //console.log(pastSearch)
+    pastSearchEl = document.createElement("button");
+    pastSearchEl.textContent = pastSearch;
+    pastSearch.classList = "d-flex w-100 btn-light border p-2";
+    pastSearch.setAttribute("data-city", pastSearch);
 
 
+
+}
 
 
 
@@ -214,6 +222,6 @@ forecastEl.appendChild(forecastHumEl);
 
     
 
-buttonEl.addEventListener("click", formSubmitHandler);
+buttonEl.addEventListener("submit", formSubmitHandler);
 
 
