@@ -15,7 +15,26 @@ h1 {
     background-color: #d3d3d3;
 }
 
-.list-group {
+.list-group-item {
     line-height: 0.5;
     border: none;
 }
+
+span.severe{
+    padding: 3px;
+    background-color: red;
+    color: white;
+}
+
+span.moderate {
+    padding: 3px;
+    background-color: yellow;
+
+}
+
+span.favorable {
+    padding: 3px;
+    background-color: green;
+    color: white;
+}
+
