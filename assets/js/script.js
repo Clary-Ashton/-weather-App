@@ -99,7 +99,7 @@ var displayWeather = function(weather, searchCity){
 
 var getUvIndex = function(lat,lon){
     var weatherKey = "bba984a84c023f7dd8d62dc48cd89120"   
-    var apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`
+    var apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${weatherKey}&lat=${lat}&lon=${lon}`
     fetch(apiURL)
     .then(function(response){
        return response.json().then(function(data){
@@ -108,8 +108,8 @@ var getUvIndex = function(lat,lon){
            // console.log(data)
         });
     });
-    //console.log(lat);
-    //console.log(lon);
+    console.log(lat);
+    console.log(lon);
 }
 
 // setting the UV index display
@@ -136,6 +136,24 @@ var displayUvIndex = function(index){
     weatherContainerEl.appendChild(uvIndexEl);
 }
 
+var get5Day = function(city){
+    var weatherKey = "bba984a84c023f7dd8d62dc48cd89120"
+    var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${weatherKey}`
+
+    fetch(apiURL)
+    .then (function(response){
+        return response.json()
+        .then (function(data){
+            console.log(data)
+            display5Day(data);
+
+        });
+    });
+
+};
+
+
+
 
 
 
@@ -144,5 +162,5 @@ var displayUvIndex = function(index){
     
 
 buttonEl.addEventListener("click", formSubmitHandler);
-pastSearchButtonEl.addEventListener("click", pastSearchHandler);
+
 
