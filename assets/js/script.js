@@ -209,6 +209,16 @@ var pastSearch = function(pastSearch){
     pastSearchButtonEl.prepend(pastSearchEl);
 }
 
+//defining pastSearchHandler/getting pastSearch to populate on search click
+var pastSearchHandler = function(event){
+    var city = event.target.getAttribute("data-city")
+    if(city){
+        getCityWeather(city);
+        get5Day(city);
+    }
+
+}
+
 
 
 
