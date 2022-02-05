@@ -17,3 +17,7 @@ A weather app that allow the user to view the current and future 5-day weather f
 
 This application is licensed with an [MIT License](./LICENSE)
 
+## Contribution
+
+Made by Clary Mawangi
+
