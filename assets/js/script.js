@@ -4,7 +4,7 @@ var cities = [];
 var cityFormEl = document.querySelector("#city-search-form");
 var cityInputEl = document.querySelector("#city");
 var weatherContainerEl = document.querySelector("#current-weather-container");
-var citySearchInputEl = document.querySelector("#searched-city");
+var citySearchInputEl = document.querySelector("#search-city");
 var forecastTitle = document.querySelector("#forecast");
 var forecastContainerEl = document.querySelector("#fiveday-container");
 var pastSearchButtonEl = document.querySelector("#past-search-buttons");
@@ -37,7 +37,7 @@ var saveSearch = function(){
 //getting weather date for cities by using the API openweathermap.
 
 var getCityWeather = function(city){    
-var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${weatherKey}`
+var apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${weatherKey}`
 
 fetch(apiUrl) 
     .then(function(response) {
@@ -54,7 +54,7 @@ var displayWeather = function(weather, searchCity){
     weatherContainerEl.textContent = "";
     citySearchInputEl.textContent = searchCity;
 
-    //console.log(weather)
+    console.log(weather)
 
     // creating the date element
     var currentDate = document.createElement("span")
@@ -68,7 +68,7 @@ var displayWeather = function(weather, searchCity){
 
     //creating a span element to hold temperature data
     var temperatureEl = document.createElement("span");
-    temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F";
+    temperatureEl.textContent = "Temperature: " + weather.main.temp + " °C";
     temperatureEl.classList = "list-group-item"
 
     //Creating a span element to hold Humidity data
@@ -78,12 +78,12 @@ var displayWeather = function(weather, searchCity){
 
      //creating a span element to hold Wind data
    var windSpeedEl = document.createElement("span");
-   windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
+   windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " KM/H";
    windSpeedEl.classList = "list-group-item"
 
     //creating a span element to hold Wind data
     var windSpeedEl = document.createElement("span");
-    windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " MPH";
+    windSpeedEl.textContent = "Wind Speed: " + weather.wind.speed + " KM/H";
     windSpeedEl.classList = "list-group-item"
 
      //appending all children to container
@@ -105,7 +105,7 @@ var getUvIndex = function(lat,lon){
        return response.json().then(function(data){
            console.log(data)
             displayUvIndex(data)
-           // console.log(data)
+            console.log(data)
         });
     });
     console.log(lat);
@@ -138,7 +138,7 @@ var displayUvIndex = function(index){
 
 var get5Day = function(city){
     var weatherKey = "bba984a84c023f7dd8d62dc48cd89120"
-    var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${weatherKey}`
+    var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${weatherKey}`
 
     fetch(apiURL)
     .then (function(response){
@@ -157,13 +157,13 @@ var display5Day = function(weather){
     forecastTitle.textContent = "5-Day Forecast:";
 
     var forecast = weather.list;
-    for(var i=5; i<forecast.length; i=i+8);
+    for(var i=5; i<forecast.length; i=i+8){
     var dailyForecast = forecast[i];
 
     var forecastEl = document.createElement("div");
     forecastEl.classList = "card bg-primary text-light m-2";
 
-    //console.log(dailyForecast)
+    console.log(dailyForecast)
 
 
 // Creating the date element
@@ -181,7 +181,7 @@ forecastEl.appendChild(weatherIcon);
 //Creating the Temperature span element
 var forecastTempEl = document.createElement("span");
 forecastTempEl.classList = "card-body text-center";
-forecastTempEl.textContent = dailyForecast.main.temp + " °F";
+forecastTempEl.textContent = dailyForecast.main.temp + " °C";
 forecastEl.appendChild(forecastTempEl);
 
 //creating the Humidity span element
@@ -189,9 +189,9 @@ var forecastHumEl = document.createElement("span");
 forecastHumEl.classList = "card-body text-center";
 forecastHumEl.textContent = dailyForecast.main.humidity + " %";
 forecastEl.appendChild(forecastHumEl);
-
+forecastContainerEl.append(forecastEl);
 console.log(forecastEl);
-
+    }
 }
 
 
@@ -201,9 +201,9 @@ var pastSearch = function(pastSearch){
     //console.log(pastSearch)
     pastSearchEl = document.createElement("button");
     pastSearchEl.textContent = pastSearch;
-    pastSearch.classList = "d-flex w-100 btn-light border p-2";
-    pastSearch.setAttribute("data-city", pastSearch)
-    pastSearch.setAttribute("type", "submit");
+    pastSearchEl.classList = "d-flex w-100 btn-light border p-2";
+    pastSearchEl.setAttribute("data-city", pastSearch)
+    pastSearchEl.setAttribute("type", "submit");
 
     //prepending pastSearch to Dom
     pastSearchButtonEl.prepend(pastSearchEl);
