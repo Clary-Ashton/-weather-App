@@ -10,7 +10,8 @@ A weather app that allow the user to view the current and future 5-day weather f
  https://clary-ashton.github.io/Weather-Dashboard/
 
 ## Screenshot
-![screencapture-file-C-Users-user-Documents-weather-App-index-html-2022-02-05-22_17_43](https://user-images.githubusercontent.com/78886789/152660876-ea8b26ee-ace3-4a85-a2c2-4734eb690ba1.png)
+
+![screencapture-clary-ashton-github-io-Weather-Dashboard-2022-02-06-13_41_38](https://user-images.githubusercontent.com/78886789/152683777-b7be28c6-101e-46f8-b74a-652a79dc2cd4.png)
 
 
 
